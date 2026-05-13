@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Beyond IFRS {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog\css\swiper-bundle.min.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'blog\css\main.css' %}">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <nav class="container">
+            <a href="#" class="logo">
+                <strong>BEYOND IFRS</strong>
+            </a>
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item active-tab">Home</li>
+                    <li class="list-item">Categories</li>
+                    <li class="list-item">News</li>
+                    <li class="list-item">Membership</li>
+                    <li class="list-item screen-lg-hidden">Sign in</li>
+                    <li class="list-item screen-lg-hidden">Sign up</li>
+                </ul>
+            </div>
+            <div class=" list right-menu">
+                <button class="btn theme-toggle-btn" id="theme-toggle-btn">
+                    <i class="ri-sun-line"></i>
+                    <i class="ri-moon-line"></i>
+                </button>
+                <button class="btn search-open-btn">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="btn menu-toggle screen-lg-hidden">
+                    <i class="ri-menu-2-line "></i>
+                    <i class="ri-close-line" id="right-close"></i>
+                </button>
+                
+                <button class="btn sm-screen-hidden">
+                    Sign in
+                </button>
+                <button class="btn sign-up-btn sm-screen-hidden fancy-border">
+                    <span>Sign up</span>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+    <!-- Search -->
+     <div class="search-container">
+        <div class="search-container-inner">
+            <form action="" class="form">
+                <input type="text" class="form-input" placeholder="what would you like to see?">
+                <button class="btn form-btn" type="submit">
+                    <i class="ri-search-line"></i>
+                </button>
+                
+            </form>
+            <span class="form-text">
+                    or press ESC to close
+            </span>
+            
+
+        </div>
+        <button class="btn search-btn-close">
+                <i class="ri-close-line"></i>
+        </button>
+     </div>
+     {% block content%}
+
+     {% endblock %}   
+    <!-- Footer -->
+     <footer class="footer section">
+        <div class="footer-section section-container d-grid">
+            <div class="company-data">
+                 <a href="#" class="logo">
+                    <strong>BEYOND IFRS</strong>
+                </a>
+                <p class="company-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum fugit officia quaerat nulla magnam aliquid ad perferendis hic laborum autem eaque, optio odio beatae quia explicabo. Maiores labore odio atque.</p>
+                <ul class="list social-media">
+                    <li class="list-item"><i class="ri-instagram-line"></i></li>
+                    <li class="list-item"><i class="ri-facebook-circle-line"></i></li>
+                    <li class="list-item"><i class="ri-twitter-line"></i></li>
+                    <li class="list-item"><i class="ri-pinterest-line"></i></li>
+                </ul>
+
+                <div class="copyright">&copy; 2026 Beyound IFRS all rights reserved</div>
+
+
+            </div>
+        </div>
+     </footer>
+
+
+    <!-- Swiper.js -->
+    <script src="{% static 'blog\js\swiper-bundle.min.js'%}"></script>
+    <script src="{% static 'blog\js\main.js' %}"></script>
+</body>
+</html>

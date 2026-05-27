@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Catergory(models.Model):
@@ -15,6 +16,22 @@ class Catergory(models.Model):
    
 
 class Post(models.Model):
+    STATUS = {
+        ("0", "Draft"),
+        ("1", "Publish")
+
+
+    }
+
+    SECTION ={
+        ("recent","Recent"),
+        ("trending","Trending"),
+        ("older_posts", "Older Posts"),
+        ("quick_read","Quick Read")
+
+    }
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
     image = models.ImageField(upload_to="images")
@@ -22,6 +39,8 @@ class Post(models.Model):
     cat = models.ForeignKey(Catergory,on_delete=models.CASCADE, related_name="categories")
     published_at = models.DateTimeField(auto_now_add=True)
     post_slug = AutoSlugField(populate_from="title",  unique=True, null=True, default=None)
+    status = models.CharField(choices=STATUS,max_length=1,default=0)
+    section = models.CharField(choices=SECTION,max_length=100,default="recent")
 
     def __str__(self):
         return self.title

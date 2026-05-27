@@ -13,173 +13,63 @@
                 </h3>
                 <span>Apple announces a new partnership</span>
             </div>
-            <a href="#" class=" article featured-article featured-article-1">
-                <img src="{% static 'blog\images\featured\featured-1.jpg'%}" alt="" class=" article-img featured-1">
+            {%for post in recent%}
+            <a href="#" class=" article featured-article featured-article-{{forloop.counter}}">
+                <img src="{{ post.image.url }}" alt="" class=" article-img featured-{{forloop.counter}}">
                 <span class="catergory">
-                    Technology
+                    {{post.cat}}
                 </span>
                 <div class="article-data-container">
                     <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
+                        <span class="date"> {{post.published_at|date:"d M Y"}}</span>
                         <span class="article-data-span"></span>
                         <span class="reading-time"> 8 mins</span>
                         
 
                      </div>
                      <h3 class="article-headline">
-                        is VR the future
+                        {{post.title}}
                      </h3>
 
                 </div>
                 
             </a>
-             <a href="#" class=" article featured-article featured-article-2">
-                <img src="{% static 'blog\images\featured\featured-2.jpg'%}" alt="" class=" article-img featured-2">
-                <span class="catergory">
-                    Technology
-                </span>
-                <div class="article-data-container">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                     </div>
-                     <h3 class="article-headline">
-                        is VR the future
-                     </h3>
-
-                </div>
-                
-            </a>
-             <a href="#" class=" article featured-article featured-article-3">
-                <img src="{% static 'blog\images\featured\featured-3.jpg'%}" alt="" class=" article-img featured-3">
-                <span class="catergory">
-                    Technology
-                </span>
-                <div class="article-data-container">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                     </div>
-                     <h3 class="article-headline">
-                        is VR the future
-                     </h3>
-
-                </div>
-                
-            </a>
+            {%endfor%}
+         
 
             </div>
               <!-- sidebar -->
       <div class="sidebar d-grid">
             <h3 class="title">Trending news</h3>
-        
+            {%for post in trending%}
             <a href="#" class="trending-article-box">
                 <div class="trending-img-container">
-                    <span class="trending-article-number">01</span>
-                    <img src="{% static 'blog\images\trending\trending_1.jpg'%}" alt="" class="article-img trending-img">
+                    <span class="trending-article-number">0{{forloop.counter}}</span>
+                    <img src="{{ post.image.url }}" alt="" class="article-img trending-img">
 
                 </div>
                 <div class="trending-article-details">
                     <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
+                        <span class="date"> {{post.published_at|date:"d M Y"}}</span>
                         <span class="article-data-span"></span>
                         <span class="reading-time"> 8 mins</span>
                         
 
                     </div>
                     <h3 class="article-headline">
-                    Sample headline
+                    {{post.title}}
                     </h3>
                 </div>
             </a>
-            <a href="#" class="trending-article-box">
-                <div class="trending-img-container">
-                    <span class="trending-article-number">02</span>
-                    <img src="{% static 'blog\images\trending\trending_2.jpg'%}" alt="" class=" article-img trending-img">
-
-                </div>
-                <div class="trending-article-details">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                    </div>
-                    <h3 class="article-headline">
-                    Sample headline
-                    </h3>
-                </div>
-            </a>
-            <a href="#" class="trending-article-box">
-                <div class="trending-img-container">
-                    <span class="trending-article-number">03</span>
-                    <img src="{% static 'blog\images\trending\trending_3.jpg'%}" alt="" class="article-img trending-img">
-
-                </div>
-                <div class="trending-article-details">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                    </div>
-                    <h3 class="article-headline">
-                    Sample headline
-                    </h3>
-                </div>
-            </a>
-            <a href="#" class="trending-article-box">
-                <div class="trending-img-container">
-                    <span class="trending-article-number">04</span>
-                    <img src="{% static 'blog\images\trending\trending_4.jpg'%}" alt="" class="article-img trending-img">
-
-                </div>
-                <div class="trending-article-details">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                    </div>
-                    <h3 class="article-headline">
-                    Sample headline
-                    </h3>
-                </div>
-            </a>
-            <a href="#" class="trending-article-box">
-                <div class="trending-img-container">
-                    <span class="trending-article-number">05</span>
-                    <img src="{% static 'blog\images\trending\trending_5.jpg'%}" alt="" class="article-img trending-img">
-
-                </div>
-                <div class="trending-article-details">
-                    <div class="article-details">
-                        <span class="date"> 5 Dec 2025</span>
-                        <span class="article-data-span"></span>
-                        <span class="reading-time"> 8 mins</span>
-                        
-
-                    </div>
-                    <h3 class="article-headline">
-                    Sample headline
-                    </h3>
-                </div>
-            </a>
+            {%endfor%}
+          
+                
 
                 
                 
                 
         
-      </div>
+      
            
             
         </div>
@@ -193,115 +83,27 @@
             <h2 class="section-title" data-name="Quick read">Quick read</h2>
             <div class="swiper">
                 <div class="swiper-wrapper">
+                    {%for post in quick %}
                     <a href="#" class=" article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_1.jpg'%}" alt="" class="article-img">
+                        <img src="{{ post.image.url }}" alt="" class="article-img">
                         
                         <div class="article-data-container">
                             <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
+                                <span class="date"> {{post.published_at|date:"d M Y"}}</span>
                                 <span class="article-data-span"></span>
                                 <span class="reading-time"> 8 mins</span>
                                 
 
                             </div>
                             <h3 class="article-headline">
-                                is VR the future
+                                {{post.title}}
                             </h3>
 
                         </div>
                         
                     </a>
-                     <a href="#" class="article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_2.jpg'%}" alt="" class="article-img">
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-
-                        </div>
-                        
-                    </a>
-                     <a href="#" class="article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_3.jpg'%}" alt="" class="article-img">
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-
-                        </div>
-                        
-                    </a>
-                     <a href="#" class="article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_4.jpg'%}" alt="" class="article-img">
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-
-                        </div>
-                        
-                    </a>
-                     <a href="#" class="article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_5.jpg'%}" alt="" class="article-img">
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-
-                        </div>
-                        
-                    </a>
-                     <a href="#" class="article swiper-slide">
-                        <img src="{% static 'blog\images\quick_read\quick_read_6.jpg'%}" alt="" class="article-img">
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-
-                        </div>
-                        
-                    </a>
-                     
+                    {%endfor%}
+                  
                     
 
                 </div>
@@ -318,29 +120,31 @@
         <div class="section-container">
             <h2 class="title section-title" data-name="Older posts">Older posts</h2>
             <div class="older-posts-wrapper d-grid" >
+                {%for post in older %}
                  <a href="#" class="article d-grid">
                         <div class="older-post-img-wrapper">
-                            <img src="{% static 'blog\images\older_posts\older_posts_1.jpg'%}" alt="" class="article-img">
+                            <img src="{{ post.image.url }}" alt="" class="article-img">
 
                         </div>
                         
                         <div class="article-data-container">
                             <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
+                                <span class="date"> {{post.published_at|date:"d M Y"}}</span>
                                 <span class="article-data-span"></span>
                                 <span class="reading-time"> 8 mins</span>
                                 
 
                             </div>
                             <h3 class="article-headline">
-                                is VR the future
+                                {{post.title}}
                             </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore hic quam ipsa ex obcaecati, in, ullam, deleniti nemo non id harum reiciendis. </p>
+                            <p> {{post.content|truncatechars:250}}</p>
 
                         </div>
                         
                     </a>
-                    <a href="#" class="article d-grid">
+                    {%endfor%}
+                    <!-- <a href="#" class="article d-grid">
                         <div class="older-post-img-wrapper">
                             <img src="{% static 'blog\images\older_posts\older_posts_2.jpg'%}" alt="" class="article-img">
 
@@ -430,7 +234,7 @@
 
                         </div>
                         
-                    </a>
+                    </a> -->
 
             </div>
             <div class="see-more-wrapper">

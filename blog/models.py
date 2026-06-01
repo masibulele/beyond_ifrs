@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Catergory(models.Model):
     name = models.CharField(max_length=100)
     slug = AutoSlugField(populate_from="name", unique=True, null=True, default=None)
+    image = models.ImageField(upload_to="images",blank=True)
 
     class Meta:
         verbose_name_plural = "Catergories"

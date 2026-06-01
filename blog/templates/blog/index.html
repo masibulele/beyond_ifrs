@@ -144,97 +144,7 @@
                         
                     </a>
                     {%endfor%}
-                    <!-- <a href="#" class="article d-grid">
-                        <div class="older-post-img-wrapper">
-                            <img src="{% static 'blog\images\older_posts\older_posts_2.jpg'%}" alt="" class="article-img">
-
-                        </div>
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore hic quam ipsa ex obcaecati, in, ullam, deleniti nemo non id harum reiciendis. </p>
-
-                        </div>
-                        
-                    </a>
-                    <a href="#" class="article d-grid">
-                        <div class="older-post-img-wrapper">
-                            <img src="{% static 'blog\images\older_posts\older_posts_3.jpg'%}" alt="" class="article-img">
-
-                        </div>
-                        
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore hic quam ipsa ex obcaecati, in, ullam, deleniti nemo non id harum reiciendis. </p>
-
-                        </div>
-                        
-                    </a>
-                    <a href="#" class="article d-grid">
-                        <div class="older-post-img-wrapper">
-                            <img src="{% static 'blog\images\older_posts\older_posts_4.jpg'%}" alt="" class="article-img">
-
-                        </div>
-                        
-                        
-                        <div class="article-data-container ">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore hic quam ipsa ex obcaecati, in, ullam, deleniti nemo non id harum reiciendis. </p>
-
-                        </div>
-                        
-                    </a>
-                    <a href="#" class="article d-grid">
-                        <div class="older-post-img-wrapper">
-                            <img src="{% static 'blog\images\older_posts\older_posts_5.jpg'%}" alt="" class="article-img">
-
-                        </div>
-                        
-                        
-                        <div class="article-data-container">
-                            <div class="article-details">
-                                <span class="date"> 5 Dec 2025</span>
-                                <span class="article-data-span"></span>
-                                <span class="reading-time"> 8 mins</span>
-                                
-
-                            </div>
-                            <h3 class="article-headline">
-                                is VR the future
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste tempore hic quam ipsa ex obcaecati, in, ullam, deleniti nemo non id harum reiciendis. </p>
-
-                        </div>
-                        
-                    </a> -->
+                   
 
             </div>
             <div class="see-more-wrapper">
@@ -252,12 +162,14 @@
         <div class="section-container">
             <h2 class="title section-title" data-name="Popular tags">Popular tags</h2>
             <div class="popular-tag-wrapper d-grid" >
+                {%for cat in cats%}
                  <a href="#" class="article">
-                    <span class="tag-name">#Travel</span>
-                    <img src="{%static 'blog\images\tags\travel-tag.jpg'%}" alt="" class="article-img">
+                    <span class="tag-name">#{{cat.name}}</span>
+                    <img src="{{ cat.image.url }}" alt="" class="article-img">
 
                 </a>
-                <a href="#" class="article">
+                {%endfor%}
+                <!-- <a href="#" class="article">
                     <span class="tag-name">#Food</span>
                     <img src="{%static 'blog\images\tags\food-tag.jpg'%}" alt="" class="article-img">
 
@@ -281,7 +193,7 @@
                     <span class="tag-name">#Fitness</span>
                     <img src="{%static 'blog\images\tags\fitness-tag.jpg'%}" alt="" class="article-img">
 
-                </a>
+                </a> -->
             </div>
 
         </div>

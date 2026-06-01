@@ -4,33 +4,29 @@
      <section class=" blog-post featured-section-offset">
         <div class="blog-post-container section-container">
             <div class="blog-post-data">
-                <h3 class="title blog-post-title">Is VR the future?</h3>
+                <h3 class="title blog-post-title">{{ post.title}}</h3>
                 <div class="article-details">
-                    <span>Dec 6th 2021</span>
+                    <span>{{ post.published_at}}</span>
                     <span class="article-data-span"></span>
                     <span>4 Min read</span>
                 </div>
-                <img src="{% static 'blog\images\featured\featured-1.jpg'%}" alt="">
+                <img src="{{ post.image.url}}" alt="">
             </div>
 
             <div class="section-container">
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis eius possimus hic eligendi distinctio rerum incidunt, esse quasi eum molestiae ducimus ipsam quae, aliquid ullam placeat dolorum nulla vero. Quam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente repellat consequatur culpa, repudiandae aut dolores iusto. Rem natus soluta, dolores, ad deleniti, aut dolorem corrupti quasi amet unde delectus hic?
+                   {{ post.content}}
                 </p>
                 
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis eius possimus hic eligendi distinctio rerum incidunt, esse quasi eum molestiae ducimus ipsam quae, aliquid ullam placeat dolorum nulla vero. Quam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quod necessitatibus, aspernatur pariatur asperiores earum quas adipisci veritatis quidem facilis! Nihil veniam quaerat nulla possimus, asperiores vero voluptatum placeat. Eveniet!
-                </p>
+                
 
-                <blockquote class="quote">
+                <!-- <blockquote class="quote">
                     <p><span><i class="ri-double-quotes-l"></i></span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates, laboriosam voluptatum quos non consequuntur nesciunt necessitatibus tempora quod inventore corporis rem nihil itaque, at provident minus aliquam veritatis. Labore?  <span><i class="ri-double-quotes-r"></i></span></p>
                 </blockquote>
-            
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis eius possimus hic eligendi distinctio rerum incidunt, esse quasi eum molestiae ducimus ipsam quae, aliquid ullam placeat dolorum nulla vero. Quam? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quod necessitatibus, aspernatur pariatur asperiores earum quas adipisci veritatis quidem facilis! Nihil veniam quaerat nulla possimus, asperiores vero voluptatum placeat. Eveniet!
-                </p>
+             -->
+                
 
-                <div class="author d-grid">
+                <!-- <div class="author d-grid">
                     <div class="author-image-box">
                         <img src="{% static 'blog\images\author.jpg'%}" alt="" class="article-img">
                     </div>
@@ -49,7 +45,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

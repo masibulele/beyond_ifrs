@@ -1,4 +1,4 @@
-from django.shortcuts import render 
+from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponse
 from .models import Post, Catergory
 
@@ -6,7 +6,7 @@ from .models import Post, Catergory
 
 def index(request):
     # retrieve all posts from database
-    recent_posts = Post.objects.filter(section="recent")
+    recent_posts = Post.objects.filter(section="recent").order_by("-published_at")
     trending_posts = Post.objects.filter(section="trending")
     quick_posts = Post.objects.filter(section="quick_read")
     older_posts = Post.objects.filter(section="older_posts")
@@ -23,4 +23,9 @@ def index(request):
     return render(request,"blog/index.html",context=context)
 
 def post_details(request,post_id):
-    return render(request, "blog/post.html")
+    post = get_object_or_404(Post,pk=post_id)
+    context={
+        "post":post,
+    }
+
+    return render(request, "blog/post.html",context=context)

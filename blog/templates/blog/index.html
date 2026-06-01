@@ -14,7 +14,7 @@
                 <span>Apple announces a new partnership</span>
             </div>
             {%for post in recent%}
-            <a href="#" class=" article featured-article featured-article-{{forloop.counter}}">
+            <a href="{% url 'post_details' post.pk %}" class=" article featured-article featured-article-{{forloop.counter}}">
                 <img src="{{ post.image.url }}" alt="" class=" article-img featured-{{forloop.counter}}">
                 <span class="catergory">
                     {{post.cat}}
